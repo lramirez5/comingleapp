@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cabin+Sketch:wght@700&display=swap');
+
+#home-page {
+    position: relative;
+}
+
+#bkgrd {
+    width           : 100%;
+    height          : 100%;
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    z-index         : -1;
+    background-image: url(../images/background_wall.jpg);
+    background-size : 110% 140%;
+    filter          : brightness(55%) saturate(2);
+
+}
+
+#landing {
+    width            : 70vw;
+    height           : calc(70vw * 9 / 21);
+    margin           : 6vh auto;
+    /*background     : url(../images/bricks.png);
+    background-size  : 30%;*/
+    border           : 40px solid #eee;
+    position         : relative;
+}
+
+#art {
+    width   : 70%;
+    margin  : 0 15%;
+    position: absolute;
+    top     : -30%;
+    z-index : 1;
+    filter  : saturate(1.5);
+}
+
+#home-menu {
+    width         : 100%;
+    height        : 8%;
+    border-left   : 40px solid #eee;
+    border-right  : 40px solid #eee;
+    position      : absolute;
+    bottom        : calc(-8% - 50px);
+    left          : -40px;
+    z-index       : 7;
+    display       : flex;
+    flex-direction: row;
+    background    : #eee;
+    padding       : 20px 0 20px;
+}
+
+#home-menu a {
+    color          : #222;
+    text-decoration: none;
+    text-align     : center;
+    display        : block;
+    width          : 100%;
+    height         : 100%;
+    font-family    : 'Cabin Sketch', cursive;
+    font-size      : 30px;
+    filter         : drop-shadow(0 12px 7px #666);
+    line-height    : 100%;
+    transition     : font-size .1s ease-in, line-height .05s ease-in;
+}
+
+#home-menu a:hover {
+    animation  : colorrotate 24s ease infinite;
+    filter     : drop-shadow(0 12px 4px #000);
+    font-size  : 36px;
+    line-height: 3vh;
+    transition : font-size .15s ease-in-out, line-height .1s ease-in-out;
+}
+
+.home-btn {
+    width: 50%;
+}
+
+#landing-content {
+    width          : calc(100% + 2px);
+    height         : calc(100% + 2px);
+    background     : linear-gradient(-45deg, rgba(255, 72, 16, 0.7), rgba(182, 8, 75, 0.7), rgba(0, 107, 146, 0.7), rgba(0, 180, 138, 0.7));
+    background-size: 400% 400%;
+    animation      : gradient 53s ease infinite;
+    overflow       : hidden;
+    position       : relative;
+    top            : -1px;
+    left           : -1px;
+    display        : flex;
+    flex-direction : row;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.cutout {
+    position : absolute;
+    bottom   : 0;
+    animation: huerotate 36s ease infinite;
+}
+
+@keyframes huerotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    80% {
+        filter: hue-rotate(0deg);
+    }
+
+    85% {
+        filter: hue-rotate(90deg);
+    }
+
+    90% {
+        filter: hue-rotate(180deg);
+    }
+
+    95% {
+        filter: hue-rotate(270deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes colorrotate {
+    0% {
+        color: #222;
+    }
+
+    12.5% {
+        color: #0000b9;
+    }
+
+    25% {
+        color: #a000a0;
+    }
+
+    37.5% {
+        color: #c50101;
+    }
+
+    50% {
+        color: #ff7300;
+    }
+
+    62.5% {
+        color: #e4af00;
+    }
+
+    75% {
+        color: #047a00;
+    }
+
+    87.5% {
+        color: #006cb4;
+    }
+
+    100% {
+        color: #222;
+    }
+}
+
+#vocals {
+    height      : 100%;
+    width       : 20%;
+    border-right: 2px solid #eee;
+}
+
+.landing-panel {
+    height  : 100%;
+    width   : 20%;
+    border  : 1px solid #eee;
+    position: relative;
+}
+
+#vocals-cutout {
+    width          : 140%;
+    left           : 0;
+    z-index        : 3;
+    animation-delay: 0s;
+}
+
+#sax-cutout {
+    width          : 200%;
+    left           : -45%;
+    z-index        : 2;
+    animation-delay: .25s;
+}
+
+#keyboard-cutout {
+    width          : 100%;
+    bottom         : -2.5vw;
+    z-index        : 1;
+    animation-delay: .5s;
+}
+
+#drums-cutout {
+    width          : 100%;
+    z-index        : 2;
+    animation-delay: .75s;
+}
+
+#guitar-cutout {
+    width          : 138%;
+    right          : 0;
+    z-index        : 3;
+    animation-delay: 1s;
+}
+
+#extras-bar {
+    width         : 100%;
+    height        : 10vh;
+    position      : absolute;
+    bottom        : 0;
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    background    : rgba(10, 10, 10, .8);
+    overflow      : hidden;
+}
+
+#mailing-signup {
+    width      : 25%;
+    text-align : center;
+    font-family: 'Architects Daughter', cursive;
+    line-height: 150%;
+    color      : #eee;
+    padding    : 6px 10px 0 10px;
+}
+
+#links-bar {
+    width     : 25%;
+    text-align: center;
+}
+
+#links-bar br {
+    display: none;
+}
+
+#links-bar img {
+    height      : 32px;
+    margin-right: 20px;
+}
+
+#spotify-song-sm {
+    animation: changeshadow 13s ease infinite;
+}
+
+#spotify-song-lg {
+    display: none;
+}
+
+#tile-menu {
+    display: none;
+}
+
+#tile-menu a {
+    color          : #fff;
+    text-decoration: none;
+    text-align     : center;
+    display        : block;
+    font-family    : 'Cabin Sketch', cursive;
+    font-size      : 22px;
+    filter         : drop-shadow(0 0 2px rgb(255, 255, 255)) drop-shadow(0 0 5px rgb(255, 72, 0));
+}
+
+#tile-menu table {
+    width : 100%;
+    height: 100%;
+}
+
+#tile-menu td {
+    padding : 0;
+    width   : calc(100% / 3);
+    height  : 50%;
+    overflow: hidden;
+}
+
+#listen-tile {
+    background         : url(../images/keyboard_tile.jpg);
+    background-position: 50% 50%;
+    background-size    : cover;
+}
+
+#player-tile {
+    position: relative;
+}
+
+#player-tile div {
+    position           : absolute;
+    top                : 0;
+    width              : 100%;
+    height             : 100%;
+    background         : url(../images/we_cant_be_friends_comingle.jpg);
+    background-size    : cover;
+    background-position: 50% 50%;
+    filter             : blur(2px) brightness(.65);
+}
+
+#player-tile iframe {
+    position: relative;
+    z-index : 1;
+}
+
+#updates-tile {
+    background         : url(../images/guitar_tile.jpg);
+    background-position: 50% 50%;
+    background-size    : cover;
+}
+
+#gallery-tile {
+    background         : url(../images/sax_tile.jpg);
+    background-position: 50% 50%;
+    background-size    : cover;
+}
+
+#press-tile {
+    background         : url(../images/vocals_tile.jpg);
+    background-position: 50% 50%;
+    background-size    : cover;
+}
+
+#contact-tile {
+    background         : url(../images/drums_tile.jpg);
+    background-position: 50% 50%;
+    background-size    : cover;
+}
+
+@keyframes changeshadow {
+    0% {
+        filter: drop-shadow(10px 0 12px rgb(0, 255, 136)) drop-shadow(-10px 0 12px rgb(103, 0, 177));
+    }
+
+    50% {
+        filter: drop-shadow(10px 0 12px rgb(103, 0, 177)) drop-shadow(-10px 0 12px rgb(0, 255, 136));
+    }
+
+    100% {
+        filter: drop-shadow(10px 0 12px rgb(0, 255, 136)) drop-shadow(-10px 0 12px rgb(103, 0, 177));
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #landing {
+        width       : calc(100% - 4px);
+        height      : calc(100vw * 9 / 21);
+        margin      : 3vh auto;
+        border      : 4vw solid #eee;
+        border-left : 2px solid #eee;
+        border-right: 2px solid #eee;
+    }
+
+    #home-menu {
+        left        : -2px;
+        border-left : 2px solid #eee;
+        border-right: 2px solid #eee;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    #spotify-song-sm {
+        display: none;
+    }
+
+    #spotify-song-lg {
+        display : block;
+        position: absolute;
+        width   : 90%;
+        left    : 5%;
+        height  : 80px;
+        bottom  : 12%;
+    }
+
+    #links-bar {
+        width: 50%;
+    }
+
+    #mailing-signup {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    #landing {
+        width       : calc(100% - 4px);
+        height      : calc(100vw * 9 / 21);
+        margin      : 3vh auto;
+        border      : 4vw solid #eee;
+        border-left : 2px solid #eee;
+        border-right: 2px solid #eee;
+    }
+
+    #home-menu {
+        display       : none;
+        flex-direction: column;
+        align-items   : center;
+        width         : 100%;
+        height        : 240px;
+        top           : calc(90vw * 9 / 21 + 10px);
+        left          : -4vw;
+        border-radius : 18px;
+        border-left   : 4vw solid #eee;
+        border-right  : 4vw solid #eee;
+    }
+
+    #home-menu a {
+        width        : 100%;
+        height       : 30px;
+        margin-bottom: 20px;
+    }
+
+    #home-menu a:hover {
+        font-size  : 36px;
+        line-height: 100%;
+    }
+
+
+    #spotify-song-sm {
+        display: none;
+    }
+
+    #spotify-song-lg {
+        /*display  : block;*/
+        display  : none;
+        position : absolute;
+        width    : 80%;
+        height   : calc(85.5% - 3vh - 8vw - 90vw * 9 / 21);
+        top      : calc(90vw * 9 / 21 + 8vw + 3vh + 24px);
+        left     : 10%;
+        animation: none;
+        z-index  : 7;
+    }
+
+    #links-bar {
+        width: 50%;
+    }
+
+    #links-bar br {
+        display: block;
+    }
+
+    #mailing-signup {
+        width: 50%;
+    }
+
+    #mailing-signup label {
+        font-size: 80%;
+    }
+
+    #tile-menu {
+        display     : block;
+        position    : relative;
+        background  : #eee;
+        width       : 100%;
+        height      : calc(100vh - 6vh - 12vw - 100vw * 9 / 21 - 10vh);
+        left        : -2px;
+        border      : 4vw solid #eee;
+        border-left : 2px solid #eee;
+        border-right: 2px solid #eee;
+        text-align  : center;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    #spotify-song-lg {
+        height: calc(81% - 3vh - 8vw - 90vw * 9 / 21);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #spotify-song-lg {
+        height: calc(76.5% - 3vh - 8vw - 90vw * 9 / 21);
+    }
+}
