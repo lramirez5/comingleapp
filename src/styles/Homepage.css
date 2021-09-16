@@ -238,9 +238,37 @@
     width      : 25%;
     text-align : center;
     font-family: 'Architects Daughter', cursive;
-    line-height: 150%;
+    line-height: 180%;
     color      : #eee;
-    padding    : 6px 10px 0 10px;
+    padding    : 0px 10px 4px 10px;
+}
+
+#mailing-signup form div:last-child {
+    position: relative;
+    border  : 0px dashed orange;
+    width   : 100%;
+}
+
+#emailbox {
+    width        : 60%;
+    margin       : auto;
+    border-radius: 8px 0 0 8px;
+    border       : none;
+    padding      : 6px;
+}
+
+#submit {
+    width        : 30%;
+    height       : 100%;
+    z-index      : 10;
+    border       : none;
+    border-radius: 0 8px 8px 0;
+    background   : rgb(190, 190, 190);
+    cursor       : pointer;
+    font-family  : 'Architects Daughter';
+    padding      : 4.4px;
+    position     : relative;
+    top          : -.3px;
 }
 
 #links-bar {
@@ -270,13 +298,21 @@
 }
 
 #tile-menu a {
+    width          : 100%;
+    height         : 100%;
+    background     : rgba(0, 0, 0, .4);
     color          : #fff;
     text-decoration: none;
     text-align     : center;
     display        : block;
     font-family    : 'Cabin Sketch', cursive;
     font-size      : 22px;
-    filter         : drop-shadow(0 0 2px rgb(255, 255, 255)) drop-shadow(0 0 5px rgb(255, 72, 0));
+    line-height    : calc((100vh - 6vh - 12vw - 100vw * 9 / 21 - 10vh) / 2);
+}
+
+#tile-menu a:hover {
+    filter    : drop-shadow(0 0 2px rgb(255, 255, 255)) drop-shadow(0 0 5px rgb(255, 72, 0));
+    background: none;
 }
 
 #tile-menu table {
@@ -357,12 +393,13 @@
 
 @media screen and (max-width: 1100px) {
     #landing {
-        width       : calc(100% - 4px);
-        height      : calc(100vw * 9 / 21);
-        margin      : 3vh auto;
-        border      : 4vw solid #eee;
-        border-left : 2px solid #eee;
-        border-right: 2px solid #eee;
+        width        : calc(100vw - 4px);
+        height       : calc((100vw - 4px) * 9 / 21);
+        margin       : 3vh auto;
+        border-top   : 4vw solid #eee;
+        border-bottom: 4vw solid #eee;
+        border-left  : 2px solid #eee;
+        border-right : 2px solid #eee;
     }
 
     #home-menu {
@@ -390,6 +427,10 @@
         width: 50%;
     }
 
+    #links-bar a img {
+        height: 24px;
+    }
+
     #mailing-signup {
         width: 50%;
     }
@@ -397,12 +438,13 @@
 
 @media screen and (max-width: 710px) {
     #landing {
-        width       : calc(100% - 4px);
-        height      : calc(100vw * 9 / 21);
-        margin      : 3vh auto;
-        border      : 4vw solid #eee;
-        border-left : 2px solid #eee;
-        border-right: 2px solid #eee;
+        width        : calc(100vw - 4px);
+        height       : calc((100vw - 4px) * 9 / 21);
+        margin       : 3vh auto;
+        border-top   : 4vw solid #eee;
+        border-bottom: 4vw solid #eee;
+        border-left  : 2px solid #eee;
+        border-right : 2px solid #eee;
     }
 
     #home-menu {
@@ -463,16 +505,17 @@
     }
 
     #tile-menu {
-        display     : block;
-        position    : relative;
-        background  : #eee;
-        width       : 100%;
-        height      : calc(100vh - 6vh - 12vw - 100vw * 9 / 21 - 10vh);
-        left        : -2px;
-        border      : 4vw solid #eee;
-        border-left : 2px solid #eee;
-        border-right: 2px solid #eee;
-        text-align  : center;
+        display      : block;
+        position     : relative;
+        background   : #eee;
+        width        : 100%;
+        height       : calc(100vh - 6vh - 12vw - 100vw * 9 / 21 - 10vh);
+        left         : -2px;
+        border-top   : 4vw solid #eee;
+        border-bottom: 4vw solid #eee;
+        border-left  : 2px solid #eee;
+        border-right : 2px solid #eee;
+        text-align   : center;
     }
 }
 
@@ -486,4 +529,12 @@
     #spotify-song-lg {
         height: calc(76.5% - 3vh - 8vw - 90vw * 9 / 21);
     }
+}
+
+#sizeinfo {
+    position  : absolute;
+    background: palegreen;
+    top       : 0;
+    padding   : 10px;
+    z-index   : 10;
 }

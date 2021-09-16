@@ -1,9 +1,20 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Homepage.css'
 
 export function HomepageComponent() {
+    useEffect(() => {
+        setInterval(getSize, 100);
+    }, []);
+
+    function getSize() {
+        var el = document.getElementById("sizeinfo")
+        el.innerHTML = `width: ${window.innerWidth}, height: ${window.innerHeight}`
+    }
+
     return (
         <div id="homepage">
+            <div id="sizeinfo">width: 100px, height 200px</div>
             <div id="bkgrd"></div>
             <div id="landing">
                 <div id="home-menu">
@@ -34,21 +45,16 @@ export function HomepageComponent() {
                 <div id="tile-menu">
                     <table>
                         <tr>
-                            <td id="listen-tile"><Link to='' >Listen</Link></td>
+                            <td id="listen-tile" className="tile-btn"><Link to='' >Listen</Link></td>
                             <td id="player-tile"><div></div><iframe id="spotify-tile" src="https://open.spotify.com/embed/track/0TOFSOlHbkGEmw4ZvBcqHa?theme=0" width="80" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
-                            <td id="updates-tile"><Link to='' >Updates</Link></td>
+                            <td id="updates-tile" className="tile-btn"><Link to='' >Updates</Link></td>
                         </tr>
                         <tr>
-                            <td id="gallery-tile"><Link to=''>Gallery</Link></td>
-                            <td id="press-tile"><Link to='' >Press</Link></td>
-                            <td id="contact-tile"><Link to=''>Contact</Link></td>
+                            <td id="gallery-tile" className="tile-btn"><Link to=''>Gallery</Link></td>
+                            <td id="press-tile" className="tile-btn"><Link to='' >Press</Link></td>
+                            <td id="contact-tile" className="tile-btn"><Link to=''>Contact</Link></td>
                         </tr>
                     </table>
-                    <div className="tile-btn"></div>
-                    <div className="tile-btn"></div>
-                    <div className="tile-btn"></div>
-                    <div className="tile-btn"></div>
-                    <div className="tile-btn"></div>
                 </div>
             </div>
             <div id="extras-bar">
@@ -56,7 +62,6 @@ export function HomepageComponent() {
                     <a href="https://open.spotify.com/artist/416B5nuGx3UzRNctcYeZQC" target="_blank" rel="noreferrer"><img id="spotify-link" src="images/spotify_icon.png" /></a>
                     <a href="https://music.apple.com/us/artist/co-mingle/1515029919" target="_blank" rel="noreferrer"><img id="apple-link" src="images/itunes_icon.png" /></a>
                     <a href="https://comingle.bandcamp.com/" target="_blank" rel="noreferrer"><img id="bandcamp-link" src="images/bandcamp_icon.png" /></a>
-                    <br />
                     <a href="https://www.instagram.com/comingle.co/" target="_blank" rel="noreferrer"><img id="instagram-link" src="images/instagram_icon.png" /></a>
                     <a href="https://www.facebook.com/comingletingle/" target="_blank" rel="noreferrer"><img id="facebook-link" src="images/facebook_icon.png" /></a>
                     <a href="https://www.youtube.com/channel/UCi8upxV2kZ2XfBnDp5bea8Q" target="_blank" rel="noreferrer"><img id="youtube-link" src="images/youtube_icon.png" /></a>
@@ -64,10 +69,14 @@ export function HomepageComponent() {
                 <iframe id="spotify-song-sm" src="https://open.spotify.com/embed/track/0TOFSOlHbkGEmw4ZvBcqHa?theme=0" width="50%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 <div id="mailing-signup">
                     <form>
-                        <label htmlFor="email">Join the CoMingle mailing list:</label><br />
-                        <input id="emailbox" name="email" type="email" required placeholder="Email" />
-                        <input id="submit" type="submit" />
-                        <p id="result-text"></p>
+                        <div>
+                            <label htmlFor="email">Join our mailing list:</label>
+                        </div>
+                        <div>
+                            <input id="emailbox" name="email" type="email" required placeholder="Email" />
+                            <input id="submit" type="submit" />
+                            {/*<p id="result-text"></p>*/}
+                        </div>
                     </form>
                 </div>
             </div>
