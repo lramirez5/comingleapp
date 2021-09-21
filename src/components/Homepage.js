@@ -3,26 +3,17 @@ import { Link } from 'react-router-dom'
 import '../styles/Homepage.css'
 
 export function HomepageComponent() {
-    useEffect(() => {
-        setInterval(getSize, 100);
-    }, []);
-
-    function getSize() {
-        var el = document.getElementById("sizeinfo")
-        el.innerHTML = `width: ${window.innerWidth}, height: ${window.innerHeight}`
-    }
 
     return (
         <div id="homepage">
-            <div id="sizeinfo">width: 100px, height 200px</div>
             <div id="bkgrd"></div>
             <div id="landing">
                 <div id="home-menu">
-                    <div className="home-btn"><Link to='' >Listen</Link></div>
-                    <div className="home-btn"><Link to='' >Updates</Link></div>
-                    <div className="home-btn"><Link to=''>Gallery</Link></div>
-                    <div className="home-btn"><Link to='' >Press</Link></div>
-                    <div className="home-btn"><Link to=''>Contact</Link></div>
+                    <div className="home-btn"><Link to='/listen' >Listen</Link></div>
+                    <div className="home-btn"><Link to='/news' >News</Link></div>
+                    <div className="home-btn"><Link to='/gallery'>Gallery</Link></div>
+                    <div className="home-btn"><Link to='/epk' >Press</Link></div>
+                    <div className="home-btn"><Link to='/contact'>Contact</Link></div>
                 </div>
                 <img id="art" src="images/comingle_logo.png" />
                 <div id="landing-content">
@@ -39,20 +30,20 @@ export function HomepageComponent() {
                         <img id="drums-cutout" className="cutout" src="images/drums_cutout.png" />
                     </div>
                     <div className="landing-panel">
-                        <img id="guitar-cutout" className="cutout" src="images/guitar_cutout1.png" />
+                        <img id="guitar-cutout" className="cutout" src="images/guitar_cutout2.png" />
                     </div>
                 </div>
                 <div id="tile-menu">
                     <table>
                         <tr>
-                            <td id="listen-tile" className="tile-btn"><Link to='' >Listen</Link></td>
+                            <td id="listen-tile" className="tile-btn"><Link to='/listen' >Listen</Link></td>
                             <td id="player-tile"><div></div><iframe id="spotify-tile" src="https://open.spotify.com/embed/track/0TOFSOlHbkGEmw4ZvBcqHa?theme=0" width="80" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
-                            <td id="updates-tile" className="tile-btn"><Link to='' >Updates</Link></td>
+                            <td id="updates-tile" className="tile-btn"><Link to='/news' >News</Link></td>
                         </tr>
                         <tr>
-                            <td id="gallery-tile" className="tile-btn"><Link to=''>Gallery</Link></td>
-                            <td id="press-tile" className="tile-btn"><Link to='' >Press</Link></td>
-                            <td id="contact-tile" className="tile-btn"><Link to=''>Contact</Link></td>
+                            <td id="gallery-tile" className="tile-btn"><Link to='/gallery'>Gallery</Link></td>
+                            <td id="press-tile" className="tile-btn"><Link to='/epk' >Press</Link></td>
+                            <td id="contact-tile" className="tile-btn"><Link to='/contact'>Contact</Link></td>
                         </tr>
                     </table>
                 </div>
@@ -80,11 +71,11 @@ export function HomepageComponent() {
                     </form>
                 </div>
             </div>
-            <iframe id="spotify-song-lg" src="https://open.spotify.com/embed/track/0TOFSOlHbkGEmw4ZvBcqHa?theme=0" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
             {
                 /*
-                    <div id="spotify-player">
+                    <iframe id="spotify-song-lg" src="https://open.spotify.com/embed/track/0TOFSOlHbkGEmw4ZvBcqHa?theme=0" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+                                <div id="spotify-player">
                         <iframe src="https://open.spotify.com/embed/artist/416B5nuGx3UzRNctcYeZQC" width="380" height="240" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </div>
                     <div id="apple-player">

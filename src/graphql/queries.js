@@ -42,6 +42,68 @@ export const listPosts = /* GraphQL */ `
     }
   }
 `;
+export const getCMImage = /* GraphQL */ `
+  query GetCMImage($id: ID!) {
+    getCMImage(id: $id) {
+      id
+      image
+      title
+      subtitle
+      credit
+      date
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCMImages = /* GraphQL */ `
+  query ListCMImages(
+    $filter: ModelCMImageFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCMImages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        image
+        title
+        subtitle
+        credit
+        date
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getGallery = /* GraphQL */ `
+  query GetGallery($id: ID!) {
+    getGallery(id: $id) {
+      id
+      images
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listGalleries = /* GraphQL */ `
+  query ListGalleries(
+    $filter: ModelGalleryFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listGalleries(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        images
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const postsByDate = /* GraphQL */ `
   query PostsByDate(
     $type: String

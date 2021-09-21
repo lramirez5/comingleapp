@@ -12,3 +12,18 @@ type Post @model
   tags: [String]
   createdAt: String!
 }
+
+type CMImage @model {
+  id: ID!
+  image: String!
+  title: String
+  subtitle: String
+  credit: String
+  date: AWSDate
+  createdAt: String!
+}
+
+type Gallery @model {
+  id: ID!
+  images: [AWSJSON]
+}

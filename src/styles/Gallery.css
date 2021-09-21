@@ -1,0 +1,378 @@
+body {
+    background     : url(../images/painted_bricks_texture.png);
+    background-size: 50%;
+}
+
+#add-img-panel {
+    background   : #eee;
+    border-radius: 6px;
+    border       : 4px groove black;
+    padding      : 12px;
+    margin       : 2vh auto 4vh;
+    width        : 90vw;
+    text-align   : center;
+}
+
+#add-img-panel button {
+    cursor       : pointer;
+    padding      : 12px;
+    border-radius: 8px;
+    background   : #cde6ff;
+    margin-top   : 4px;
+}
+
+#file-picker {
+    border       : 1px solid black;
+    border-radius: 4px;
+    padding      : 20px;
+    width        : auto;
+    cursor       : pointer;
+    margin-right : 12px;
+}
+
+#add-img-details {
+    display       : none;
+    width         : 80%;
+    margin        : auto;
+    flex-direction: column;
+}
+
+#add-img-details input {
+    margin       : 6px;
+    padding      : 6px;
+    border-radius: 4px;
+    border       : none;
+    box-shadow   : 0 0 4px black;
+}
+
+#img-board {
+    width          : 86vw;
+    padding        : 2vw 2vw 24vw 2vw;
+    height         : auto;
+    margin         : 3vh auto 3vh;
+    position       : relative;
+    /*column-count : 4;
+    column-gap     : 30px;*/
+    background     : url(../images/bulletin_texture.png);
+    background-size: 20%;
+    border-top     : 2vw ridge rgb(26, 26, 119);
+    border-bottom  : 2vw ridge rgb(26, 26, 119);
+    border-left    : 2vw groove rgb(26, 26, 119);
+    border-right   : 2vw groove rgb(26, 26, 119);
+    border-radius  : 5px;
+    box-shadow     : inset -6px 6px 16px rgba(0, 0, 0, 0.8),
+        -6px 6px 16px rgba(0, 0, 0, 1);
+    font-size: 1em;
+}
+
+#top-imgs {
+    width       : 100%;
+    margin      : auto;
+    height      : auto;
+    column-count: 2;
+    column-gap  : 30px;
+}
+
+#top-imgs .img-sm {
+    width     : 82%;
+    left      : 9%;
+    margin-top: 20px;
+}
+
+#other-imgs {
+    width       : 100%;
+    height      : auto;
+    column-count: 4;
+    column-gap  : 30px;
+}
+
+.img-sm {
+    cursor : pointer;
+    display: inline-block;
+    padding: 14px;
+    background: linear-gradient(.35turn, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+        linear-gradient(162deg, rgba(238, 243, 214, .5) -20%, white 70%, rgba(238, 243, 214, .9)),
+        rgb(206, 206, 206);
+    width        : calc(100% - 28px);
+    margin-top   : 12px;
+    margin-bottom: 12px;
+    position     : relative;
+    column-span  : 1;
+    box-shadow   : -4px 5px 4px rgba(0, 0, 0, 0.6),
+        0 0 9px rgba(0, 0, 0, .5);
+    border-radius: 1px;
+    z-index      : 2;
+}
+
+.img-sm:hover {
+    background: #eee;
+}
+
+.img-sm:hover .img-overlay {
+    display: none;
+}
+
+.img-sm img {
+    width     : 100%;
+    display   : block;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, .2);
+}
+
+.img-image {
+    position: relative;
+}
+
+.img-overlay {
+    position: absolute;
+    width   : 100%;
+    height  : 100%;
+    background: linear-gradient(rgba(0, 0, 0, .6), transparent 1%, transparent 99%, rgba(0, 0, 0, .7)),
+        linear-gradient(195deg, rgba(255, 255, 255, .4) -18%, rgba(0, 0, 0, .3), rgba(0, 0, 177, 0.4) 110%);
+}
+
+.img-info {
+    text-align : center;
+    font-family: 'Architects Daughter';
+}
+
+.img-title {
+    font-weight: bold;
+    font-size  : 110%;
+}
+
+.img-desc {
+    font-size: 75%;
+}
+
+.img-date {
+    font-size: 50%;
+}
+
+.img-cred {
+    font-size: 65%;
+}
+
+.pin {
+    position     : absolute;
+    border: 3px solid red;
+    border-top: 1px solid red;
+    border-right: 1px solid red;
+    background   : radial-gradient(red, transparent),
+                    linear-gradient(200deg,rgba(255,255,255,.9), transparent),
+                    rgb(177, 0, 0);
+    width: 1vw;
+    height: 1vw;
+    border-radius: 100%;
+    box-shadow   : -3px 2px 5px 2px black,
+                    1px -1px 3px rgba(0,0,0,.4);
+}
+
+.num-tag {
+    position  : absolute;
+    top       : 0;
+    padding   : 6px;
+    background: rgba(251, 255, 0, .8);
+}
+
+.delete-btn {
+    display   : none;
+    position  : absolute;
+    top       : 0;
+    left      : 100%;
+    padding   : 6px;
+    background: rgba(255, 0, 0, .8)
+}
+
+.selected {
+    background: rgb(84, 231, 78);
+}
+
+.selected:hover {
+    background: rgb(84, 231, 78);
+}
+
+.positioner {
+    position     : relative;
+    text-align   : center;
+    width        : 40%;
+    margin       : 0 30%;
+    background   : rgb(36, 193, 255);
+    box-shadow   : 0 0 4px black;
+    border-radius: 4px;
+    padding      : 2px;
+    display      : none;
+    cursor       : pointer;
+}
+
+#gallery-update {
+    position       : fixed;
+    bottom         : 0;
+    left           : 0;
+    width          : 50%;
+    text-align     : center;
+    padding        : 24px;
+    z-index        : 8;
+    background     : rgba(255, 208, 0, .8);
+    font-size      : 24px;
+    cursor         : pointer;
+    text-decoration: underline;
+}
+
+#gallery-update:hover {
+    background: rgba(255, 208, 0, 1);
+    color     : rgb(255, 0, 119);
+}
+
+#cancel-update {
+    position       : fixed;
+    bottom         : 0;
+    right          : 0;
+    width          : 50%;
+    text-align     : center;
+    padding        : 24px;
+    z-index        : 8;
+    background     : rgba(50, 197, 255, 0.8);
+    font-size      : 24px;
+    cursor         : pointer;
+    text-decoration: underline;
+}
+
+#cancel-update:hover {
+    background: rgba(50, 197, 255, 1);
+    color     : rgb(255, 0, 119);
+}
+
+/* Credit to Marcio Barrios - https://codepen.io/hunab/pen/EvrCB */
+/* I fixed the angles for the linear gradients though*/
+.tape {
+    background-color: hsla(0, 0%, 100%, .2);
+    box-shadow      : inset 0 0 1em .5em hsla(0, 0%, 100%, .1);
+    height          : auto;
+    padding         : 4px;
+    position        : relative;
+    z-index         : 1;
+    transform       : rotate(-3deg);
+    width           : 80%;
+    margin          : 30px auto 30px;
+    text-align      : center;
+    filter          : drop-shadow(0 1px 1px hsla(0, 0%, 0%, .3));
+    -webkit-filter  : drop-shadow(0 1px 1px hsla(0, 0%, 0%, .3));
+}
+
+.tape:after,
+.tape:before {
+    background-size: .4em .4em;
+    bottom         : 0;
+    content        : '';
+    position       : absolute;
+    top            : 0;
+    width          : .2em;
+}
+
+.tape:after {
+    background-image: linear-gradient(45deg, transparent 50%, hsla(0, 0%, 100%, .35) 50%),
+        linear-gradient(135deg, transparent 50%, hsla(0, 0%, 100%, .3) 50%);
+    background-position: 0 100%;
+    left               : -.2em;
+}
+
+.tape:before {
+    background-image: linear-gradient(-45deg, transparent 50%, hsla(0, 0%, 100%, .3) 50%),
+        linear-gradient(-135deg, transparent 50%, hsla(0, 0%, 100%, .35) 50%);
+    background-position: 100% 100%;
+    right              : -.2em;
+}
+
+.tape div {
+    position      : relative;
+    font-family   : 'Architects Daughter';
+    font-size     : 22px;
+    font-weight   : bold;
+    letter-spacing: 4px;
+}
+
+/* End of credited section */
+
+#art-splash {
+    width   : 80%;
+    position: absolute;
+    bottom  : -4%;
+    left    : 10%;
+    z-index : 1;
+}
+
+#enlarge {
+    display: none;
+    position: fixed;
+    z-index: 8;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.85);
+    text-align: center;
+}
+
+#enlarged-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#exit-enlarge {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: #eee;
+    padding:2vh;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+    background: rgba(255,255,255,.2);
+    cursor: pointer;
+}
+
+#exit-enlarge:hover {
+    background: rgba(255,255,255,.7);
+    color: #222;
+}
+
+@media screen and (max-width: 800px) {
+    #img-board {
+        font-size     : .6em;
+        /*column-count: 2;
+        column-gap    : 12px;*/
+    }
+
+    #top-imgs {
+        width       : 100%;
+        height      : auto;
+        column-count: 2;
+        column-gap  : 12px;
+    }
+
+    #other-imgs {
+        width       : 100%;
+        height      : auto;
+        column-count: 2;
+        column-gap  : 12px;
+    }
+
+    .img-sm {
+        padding: 5px;
+        width  : calc(100% - 8px)
+    }
+
+    .tape div {
+        font-size     : 16px;
+        letter-spacing: 3px;
+    }
+
+    #art-splash {
+        bottom: -2%;
+    }
+}
